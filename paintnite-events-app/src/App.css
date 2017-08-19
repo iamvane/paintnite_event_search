@@ -11,8 +11,7 @@ a {
   color: #1ED076; }
 
 a:hover {
-  color: #1ED076;
-  text-deciration: none; }
+  color: #1ED076; }
 
 .color-grey {
   color: #ABABAB; }
@@ -118,6 +117,30 @@ button.green {
 .artist-details {
   width: 80%;
   float: left; }
+
+/****Rating SCSS*****/
+.star-rating__checkbox {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0; }
+
+.star-rating__star {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1;
+  color: #BFBEBE;
+  transition: color .2s ease-out; }
+  .star-rating__star:hover {
+    cursor: pointer; }
+  .star-rating__star.is-selected {
+    color: #1ED076; }
+  .star-rating__star.is-disabled:hover {
+    cursor: default; }
 
 @media (min-width: 768px) {
   .EventList {
