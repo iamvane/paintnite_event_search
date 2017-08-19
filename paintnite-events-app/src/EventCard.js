@@ -58,13 +58,19 @@ const EventCard =(props)=> {
 
         <div className="event-details">
           
-           <h4>{props.name}</h4>
-          
+          <h4>{props.name}</h4>
+         
           <p className="color-grey">{props.venue}</p>
-          <img alt="artist" className="avatar" src={props.artistImage}/>
-         
-          <span>{props.firstName}  {props.lastName}</span>
-         
+       
+          <div className="avatar-wrapper">
+            <img alt="artist" className="avatar" src={props.artistImage}/>
+          </div>
+          
+          <div className="artist-details">
+            <span>{props.firstName}  {props.lastName}</span><br/>
+            <img alt="stars" className="stars" src={require('./img/stars.png')}/>
+          </div>
+        
         </div>
       
        </div>

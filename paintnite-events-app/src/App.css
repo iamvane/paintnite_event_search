@@ -8,28 +8,60 @@ body{
 	font-family: 'Circular';
 }
 
+a{
+	color: #1ED076 ;
+}
 .color-grey{
 	color:#ABABAB;
 }
-
-.App {
-  /* text-align: center;*/ }
 
 .App-logo {
   height: 40px;
   color: green; }
 
-.App-header {
-  height: 60px;
-  padding: 10px 20px;
-  box-shadow: 0 4px 2px -2px #f4f4f4;
-  background: #fff; }
-.filters-wrapper{
-	background:#fff;
+.header-wrapper{
+	background: #fff;
 }
+.logo-header{
+  height: 70px;
+  padding: 10px 60px;
+  box-shadow: 0 4px 2px -2px #f4f4f4; 
+}
+
+.logo-wrapper{
+	float:left;
+}
+
+.menu-wrapper{
+	float: left;
+    padding-top: 20px;
+    margin-left:40px;
+}
+
+.filters-wrapper{
+	display: -webkit-box;
+}
+.filters{
+	margin:50px auto;
+	width:400px;
+/*	line-height: 150px*/
+}
+
+button{
+	border: none;
+	padding: 10px 20px;
+	border-radius: 20px;
+	margin-right:7px;
+	color:#fff;
+}
+
+button.green{
+	background-color: #1ED076;
+}
+
 .EventList {
   background: #F3F3F3;
-  padding:50px; }
+  padding:50px 80px; }
 
 .EventCard{
 	height:450px;
@@ -55,7 +87,6 @@ body{
 
 .event-wrapper{
 	background:#fff;
-	/*padding:40px;*/
 	border-radius: 10px;
 	height:100%;
 }
@@ -86,7 +117,22 @@ body{
 }
 
 .avatar{
-	width:40px !important;
-	height:40px;
+	width:30px;
+	height:30px;
 	border-radius: 50%;
+}
+
+.avatar-wrapper{
+	width:20%;
+	float:left;
+	padding:10px;
+}
+
+.artist-details{
+	width:80%;
+	float:left;
+
+}
+.stars{
+	width:70px;
 }
