@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import logo from './logo.png';
 import './App.css';
-import EventList from './EventList';
+import EventCard from './EventCard';
 import SampleData from './data/sample-data.json';
+import _ from 'lodash';
 
-let data = SampleData.data.eventSearch;
+let dataRaw = SampleData.data.eventSearch.edges;
+let data= dataRaw;
 
 class App extends Component {
   
@@ -12,22 +14,49 @@ class App extends Component {
     
     super(props);
     this.state = {
- 
+      data: {data},
+      defaultSortIndexes: [],
+      orderDir:''
     };
 
-    this.sortEeventAscending = this.sortEeventAscending.bind(this);
-    this.sortEeventDescending = this.sortEeventDescending.bind(this);
+    this.sortEevent = this.sortEevent.bind(this);
   }
 
-  sortEeventAscending(){
+  sortEevent(e, type){
 
-  }
+    if (type === 'asc'){
+      this.setState({ orderDir:'asc'});
+    }else{
+      this.setState({ orderDir:'desc'});
 
-  sortEeventDescending(){
-    
+    }
   }
 
   render() {
+    
+    let filteredEvents = this.state.data.data;
+    let orderDir = this.state.orderDir;
+
+    filteredEvents = _.orderBy(filteredEvents, (event)=>{
+      return new Date(event.node.start);
+    }, orderDir);//order by
+
+    let events = filteredEvents.map((event, i) =>
+    <EventCard
+      key={i}
+      name={event.node.title}
+      image={event.node.painting.images[0].thumb_url}
+      venue={event.node.venue.name}
+      tickets={event.node.tickets_available}
+      distance={event.distance}
+      date={event.node.start}
+      firstName={event.node.artist.first_name}
+      lastName={event.node.artist.last_name} 
+      artistImage={event.node.artist.images[0].thumb_url}
+    />
+
+  );//map
+
     return (
       <div className="App">
 
@@ -55,9 +84,9 @@ class App extends Component {
               
               <p>Search Filters:</p>
               
-              <button onClick={this.sortEeventAscending} className="green">SORT ASCENDING</button>
+              <button onClick={(e) => this.sortEevent(e, 'asc')} className="green">SORT ASCENDING</button>
               
-              <button onClick={this.sortEeventDescending}>SORT DESCENDING</button>
+              <button onClick={(e) => this.sortEevent(e, 'desc')}>SORT DESCENDING</button>
            
             </div>
          
@@ -65,7 +94,11 @@ class App extends Component {
 
         </div>
 
-        <EventList data={data}/>
+        <div className="EventList">
+
+          {events}
+
+        </div>
  
       </div>
     );
