@@ -8,6 +8,10 @@ body{
 	font-family: 'Circular';
 }
 
+.color-grey{
+	color:#ABABAB;
+}
+
 .App {
   /* text-align: center;*/ }
 
@@ -28,8 +32,25 @@ body{
   padding:50px; }
 
 .EventCard{
-	height:600px;
+	height:450px;
 	margin-bottom:50px;
+}
+
+.date{
+	background:#727171;
+	width:110px;
+	color: #fff;
+	padding:10px;
+	margin-left:30px;
+	border-radius: 0px 0px 10px 10px;
+}
+
+.date-month{
+	display:block;
+}
+
+.EventCard h4{
+	margin-bottom:5px;
 }
 
 .event-wrapper{
@@ -39,6 +60,17 @@ body{
 	height:100%;
 }
 
+.event-meta{
+	height:70px;
+	padding:20px;
+	background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.85) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.85) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.85) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	position:absolute;
+	bottom:0;
+	width:100%;
+	color:#fff;
+}
 
 .event-details{
 	padding:30px;
