@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import logo from './logo.png';
 import './App.css';
-import EventCard from './EventCard';
 import SampleData from './data/sample-data.json';
+import logo from './logo.png';
+import EventCard from './EventCard';
+
 import _ from 'lodash';
 
 let dataRaw = SampleData.data.eventSearch.edges;

@@ -1,6 +1,6 @@
 import React from 'react';
 import moment from 'moment';
-
+import Rating from './Star';
 
 
 
@@ -68,7 +68,7 @@ const EventCard =(props)=> {
           
           <div className="artist-details">
             <span>{props.firstName}  {props.lastName}</span><br/>
-            <img alt="stars" className="stars" src={require('./img/stars.png')}/>
+            <Rating/>
           </div>
         
         </div>
