@@ -36,7 +36,7 @@ const EventCard =(props)=> {
           
           <div className="event-meta">
           
-            <div className="col-md-6">
+            <div className="col-xs-6">
              
               <img alt="distance" className="icon" src={require('./img/map.png')}/>
             
@@ -44,7 +44,7 @@ const EventCard =(props)=> {
 
             </div>
             
-            <div className="col-md-6">
+            <div className="col-xs-6">
               
               <img alt="ticket" className="icon" src={require('./img/ticket.png')}/>
               
@@ -68,7 +68,7 @@ const EventCard =(props)=> {
           
           <div className="artist-details">
             <span>{props.firstName}  {props.lastName}</span><br/>
-            <Rating/>
+            <Rating rating="2"/>
           </div>
         
         </div>

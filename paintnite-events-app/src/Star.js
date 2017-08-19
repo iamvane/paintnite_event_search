@@ -1,56 +1,74 @@
 import React, {Component} from 'react';
-import FontAwesome from 'react-fontawesome';
-
-const Star =(props)=>{
-
-    var r = 'fa fa-star';
-	if(!props.selected){
-      r += '-o';
-    }
-    return (
-    	<i {...this.props} className={r}/>
-    );
-
-};
+import PropTypes from 'prop-types';
+import './Rating.css';
 
 class Rating extends Component{
-     
-     constructor(props) {
     
-        super(props);
-        this.state = {
-          rating: 5,
-            hoverAt: null
-        };
+  constructor(props) {
+      super(props);
+      this.state = {
+        rating: this.props.rating || null,
+        temp_rating: null
+    };
+
+    // this.sortEevent = this.sortEevent.bind(this);
+  }
+
+  rate(rating) {
+    this.setState({
+      rating: rating,
+      temp_rating: rating
+    });
+  }
+
+  star_over(rating) {
+    this.state.temp_rating = this.state.rating;
+    this.state.rating = rating;
+    
+    this.setState({
+      rating: this.state.rating,
+      temp_rating: this.state.temp_rating
+    });
+  }
+
+  star_out() {
+    this.state.rating = this.state.temp_rating;
+    
+    this.setState({ rating: this.state.rating });
+  }
+
+  render() {
+    var stars = [];
+    
+    for(var i = 0; i < 5; i++) {
+      var klass = 'star-rating__star';
+      
+      if (this.state.rating >= i && this.state.rating != null) {
+        klass += ' is-selected';
       }
 
-    handleMouseOver(idx, evt){
-    	this.state.hoverAt = idx + 1;
-        this.forceUpdate();
+      stars.push(
+        <label
+            key={i}
+          className={klass}
+          onClick={this.rate.bind(this, i)}
+          onMouseOver={this.star_over.bind(this, i)}
+          onMouseOut={this.star_out.bind(this)}>
+          ★
+        </label>
+      );
     }
-    handleMouseOut(idx, evt){
-    	this.state.hoverAt = null;
-        this.forceUpdate();
-    }
-    handleClick(idx, evt){
-        this.state.rating = idx + 1;
-        this.forceUpdate();
-        console.log('clicked');
-    }
-	render(){
-    	let stars = [];
-        for(var i = 0 ; i < 5; i++){
-        	let rating = this.state.hoverAt != null ? this.state.hoverAt : this.state.rating;
-        	let selected = (i < rating);
-        	stars.push(
-            <Star key={i} selected={selected}
-            	  onMouseOver={this.handleMouseOver.bind(this, i)}
-              	  onMouseOut={this.handleMouseOut.bind(this, i)}
-                  onClick={this.handleClick.bind(this, i)}
-            />);
-        }
-    	return (<div>{stars}</div>);
-    }
+    
+    return (
+      <div className="star-rating">
+        {stars}
+      </div>
+    );
+  }
 };
+
+Rating.propTypes={
+    disabled: PropTypes.bool
+}
 
 export default Rating;
