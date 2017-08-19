@@ -1,0 +1,13 @@
+.App {
+ /* text-align: center;*/
+}
+
+.App-logo {
+  height: 40px;
+}
+
+.App-header {
+  height: 60px;
+  padding: 10px 20px;
+  box-shadow: 0 4px 2px -2px #f4f4f4;
+}
