@@ -1,3 +1,7 @@
+body{
+	background: #F3F3F3;
+}
+
 .App {
   color: #1ED076;
   /* text-align: center;*/ }
@@ -9,7 +13,32 @@
 .App-header {
   height: 60px;
   padding: 10px 20px;
-  box-shadow: 0 4px 2px -2px #f4f4f4; }
-
+  box-shadow: 0 4px 2px -2px #f4f4f4;
+  background: #fff; }
+.filters-wrapper{
+	background:#fff;
+}
 .EventList {
-  background: #F3F3F3; }
+  background: #F3F3F3;
+  padding:50px; }
+
+.EventCard{
+	height:600px;
+}
+
+.event-wrapper{
+	background:#fff;
+	padding:40px;
+	border-radius: 20px;
+	height:100%;
+}
+
+.EventCard img{
+	width:100%
+}
+
+.avatar{
+	width:40px !important;
+	height:40px;
+	border-radius: 50%;
+}

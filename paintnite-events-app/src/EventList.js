@@ -20,6 +20,7 @@ const EventList = (props) => {
       date={event.node.start}
       firstName={event.node.artist.first_name}
       lastName={event.node.artist.last_name} 
+      artistImage={event.node.artist.images[0].thumb_url}
     />
 
   );

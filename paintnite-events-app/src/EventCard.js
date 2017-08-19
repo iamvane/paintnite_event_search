@@ -3,18 +3,21 @@ import React from 'react';
 const EventCard =(props)=> {
 
     return (
-      <div className="EventCard">
-       
+      <div className="EventCard col-md-4">
+       <div className="event-wrapper">
     
         date{props.date}
-        name{props.name}<br/>
+        
         <img src={props.image}/>
         distance{props.distance}
-        venue{props.venue}<br/>
         tickets{props.tickets}
-    {props.image}
+        name{props.name}<br/>
+        venue{props.venue}<br/>
+        <img className="avatar" src={props.artistImage}/>
+       
     {props.firstName}
     {props.lastName}
+      </div>
       </div>
     );
 }

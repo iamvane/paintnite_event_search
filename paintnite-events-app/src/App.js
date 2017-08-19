@@ -15,11 +15,13 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <a>Events</a>
         </div>
-        <p className="">
+        <div className="filters-wrapper">
+   
           Search Filters:
           SORT ASCENDING
           SORT DESCENDING
-        </p> 
+        </div>
+
           <EventList data={data}/>
 
        
