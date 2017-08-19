@@ -1,13 +1,15 @@
 .App {
- /* text-align: center;*/
-}
+  color: #1ED076;
+  /* text-align: center;*/ }
 
 .App-logo {
   height: 40px;
-}
+  color: green; }
 
 .App-header {
   height: 60px;
   padding: 10px 20px;
-  box-shadow: 0 4px 2px -2px #f4f4f4;
-}
+  box-shadow: 0 4px 2px -2px #f4f4f4; }
+
+.EventList {
+  background: #F3F3F3; }
