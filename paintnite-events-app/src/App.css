@@ -1,9 +1,14 @@
+@font-face {
+  font-family: 'Circular';
+  src: local('Circular'), url('./font/circular.woff') format('woff'); /* IE9 Compat Modes */
+ }
+
 body{
 	background: #F3F3F3;
+	font-family: 'Circular';
 }
 
 .App {
-  color: #1ED076;
   /* text-align: center;*/ }
 
 .App-logo {
@@ -24,16 +29,27 @@ body{
 
 .EventCard{
 	height:600px;
+	margin-bottom:50px;
 }
 
 .event-wrapper{
 	background:#fff;
-	padding:40px;
-	border-radius: 20px;
+	/*padding:40px;*/
+	border-radius: 10px;
 	height:100%;
 }
 
-.EventCard img{
+
+.event-details{
+	padding:30px;
+}
+
+.icon{
+	width:20px;
+	height:20px;
+}
+
+.event-image{
 	width:100%
 }
 
