@@ -40,8 +40,7 @@ a:hover {
   display: -webkit-box; }
 
 .filters {
-  margin: 50px auto;
-  /*	line-height: 150px*/ }
+  margin: 50px auto; }
 
 button {
   border: none;
